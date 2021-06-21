@@ -1,0 +1,29 @@
+@import url("../../globals.css");
+
+.dashboard-grid {
+  height: 100vh;
+  display: grid; 
+  grid-auto-columns: 1fr; 
+  grid-template-columns: 0.5fr repeat(2, 1fr); 
+  grid-template-rows: 0.5fr repeat(3, 1fr) 0.5fr; 
+  grid-template-areas: 
+    "header header header"
+    "userCard agenda agenda"
+    "editButtons agenda agenda"
+    "editButtons feedback survey"
+    "footer footer footer"; 
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0.5fr 2fr 1fr 1fr 0.5fr; 
+    grid-template-areas: 
+      "header"
+      "agenda"
+      "survey"
+      "feedback"
+      "footer"; 
+  }
+}
