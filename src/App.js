@@ -1,10 +1,9 @@
-import Loading from "./components/Loading";
+import Dashboard from "./containers/Dashboard";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Talent G</h1>
-      <Loading />
+    <div>
+      <Dashboard />
     </div>
   );
 }
