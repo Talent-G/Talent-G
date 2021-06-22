@@ -1,0 +1,34 @@
+@import "../../globals.css";
+
+.foto_avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+}
+  
+.cabecera {
+  text-align: center;
+}
+
+.label_text {
+  text-align: left;
+}
+
+.label_form {
+  padding: 1px;
+}
+
+.label {
+  display: inline;
+  margin: 10px;
+}
+
+.text_input {
+  width: 350px;
+  height: 15px;
+}
+
+.text_area {
+  width: 350px;
+  height: 50px;
+}
