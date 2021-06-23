@@ -1,0 +1,18 @@
+@import "../../globals.css";
+
+.perfil_modal {
+  width: 440px;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 100px;
+  font-size: var(--text-font-size);
+  background-color: none;
+  border-radius: 10px;
+  border: none;
+  box-shadow: var(--box-shadow);
+}

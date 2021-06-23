@@ -1,0 +1,29 @@
+@import "../../globals.css";
+
+.primary-button {
+  width: 350px;
+  height: 25px;
+  margin: 15px;
+  display: block;
+  color: white;
+  font-size: var(--text-font-size);
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  border: none;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
+
+.secondary-button {
+  width: 350px;
+  height: 25px;
+  display: block;
+  margin: 15px;
+  color: white;
+  font-size: var(--text-font-size);
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  border: none;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
