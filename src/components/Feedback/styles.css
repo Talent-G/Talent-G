@@ -13,13 +13,16 @@
 }
 
 .feedback-items {
+  padding: 0;
+}
+.feedback-item {
   font-style: normal;
   font-weight: normal;
-  font-size: 1.2rem;
+  font-size: var(--subtitle-font-size);
   list-style: none;
   padding: 0.5rem 0;
 }
-.feedback-items a {
+.feedback-item a {
   text-decoration: none;
   color: var(--tertiary-color);
 }

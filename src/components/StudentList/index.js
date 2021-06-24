@@ -9,8 +9,8 @@ const StudentList = ({title, students}) => {
 `    <BottomCard >
       <div>
         <span className="students-title">{title}</span>
-        <ul>
-            {students.map((student)=>(<li className="students-items" key={student.id}><a href='/'>{student.firstName} {student.lastName}</a></li>))}
+        <ul className="students-items">
+            {students.map((student)=>(<li className="students-item" key={student.id}><a href='/'>{student.firstName} {student.lastName}</a></li>))}
         </ul>
       </div>
     </BottomCard>`
