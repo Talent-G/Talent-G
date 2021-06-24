@@ -1,16 +1,16 @@
 
 import React from 'react'
-import BottomCard from '../BottomCard'
+import BottomCard from '../../components/BottomCard'
 import './styles.css'
 
-const Feedback = ({title, asignments}) => {
+const StudentList = ({title, students}) => {
   return(
     <>
 `    <BottomCard >
-      <div className="feedback-container">
-        <span className="feedback-title">{title}</span>
+      <div>
+        <span className="students-title">{title}</span>
         <ul>
-            {asignments.map((asignment)=>(<li className="feedback-items" key={asignment.id}><a href='/'>{asignment.firstName} {asignment.lastName}</a></li>))}
+            {students.map((student)=>(<li className="students-items" key={student.id}><a href='/'>{student.firstName} {student.lastName}</a></li>))}
         </ul>
       </div>
     </BottomCard>`
@@ -19,9 +19,9 @@ const Feedback = ({title, asignments}) => {
 
 }
 
-Feedback.defaultProps={
-  title: 'Feedback',
-  asignments:[{id: 1,
+StudentList.defaultProps={
+  title: 'Mis Alumnos',
+  students:[{id: 1,
             email: 'firstStudent@students.com',
             firstName: 'Eduardo',
             lastName: 'Torres',
@@ -53,4 +53,4 @@ Feedback.defaultProps={
     ]
 }
 
-export default Feedback;
+export default StudentList;

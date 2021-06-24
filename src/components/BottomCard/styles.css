@@ -1,0 +1,10 @@
+@import url("../../globals.css");
+
+.botomcard-container {
+  width: 456px;
+  height: 206px;
+  padding: 2rem;
+  background: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}

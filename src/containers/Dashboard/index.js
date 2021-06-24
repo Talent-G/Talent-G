@@ -1,11 +1,16 @@
 import "./styles.css";
+import Information from '../../components/Feedback'
+import StudentList from '../../components/StudentList'
 
-function Dashboard({children}) {
+function Dashboard({title, items}) {
   return(
-    <div className="dashboard-grid">
-      {children}
-    </div>
+    <>
+    <Information />
+    <StudentList />
+    </>
   )
+
 }
+
 
 export default Dashboard;

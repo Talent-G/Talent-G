@@ -1,24 +1,25 @@
 @import url("../../globals.css");
 
 .feedback-container {
-  position: absolute;
-  width: 1437px;
-  height: 747px;
-  left: 0px;
-  top: 99px;
-
-  background: rgba(54, 54, 54, 0.77);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: left;
 }
 
-.feedback-modal {
-  position: absolute;
-  width: 439px;
-  height: 678px;
-  left: 0px;
-  top: 0px;
+.feedback-title {
+  font-size: var(--title-font-size);
+  color: var(--primary-color);
+}
 
-  background: #ffffff;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 5px;
+.feedback-items {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.2rem;
+  list-style: none;
+  padding: 0.5rem 0;
+}
+.feedback-items a {
+  text-decoration: none;
+  color: var(--tertiary-color);
 }
