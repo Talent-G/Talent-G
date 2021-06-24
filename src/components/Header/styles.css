@@ -1,0 +1,28 @@
+header{
+    grid-area: header;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+}
+
+nav.header-nav{    
+    background-color: #18181A;
+    display: flex;
+    align-items: center;
+    color: white;
+    height: 60px;
+}
+
+nav.header-nav h1{
+    margin-left: 1.5rem;
+}
+
+nav.header-nav a{
+    color: white;
+    text-decoration: none;
+    margin: 0 1.5rem;
+}
+
+nav.header-nav img{
+    width: 1rem;
+}
+
