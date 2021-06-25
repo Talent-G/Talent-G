@@ -1,22 +1,14 @@
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import "./styles.css";
-import Information from '../../components/Feedback'
-import StudentList from '../../components/StudentList'
-import AsideButton from "../../components/AsideButton";
 
-function Dashboard({title, items}) {
+function Dashboard({}) {
   return(
-    <>
-    <Information />
-    <StudentList />
-
-    <AsideButton ></AsideButton>
-    <AsideButton lbl='Editar Perfil' action="/"></AsideButton>
-    <AsideButton lbl='Ver Agenda' action="/"></AsideButton>
-    <AsideButton lbl='Enviar Feedback' action="/"></AsideButton>
-    </>
+    <div className="dashboard-grid">
+      <Header/>
+      <Footer/>
+    </div>
   )
-
 }
-
 
 export default Dashboard;
