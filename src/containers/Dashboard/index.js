@@ -1,7 +1,8 @@
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import "./styles.css";
 import Main_info from "../Main_info";
 
-function Dashboard() {
 //   const title="Dia 1 - CSS"
 
 //   const content={
@@ -19,11 +20,12 @@ function Dashboard() {
 //       "Css selectors"
 // ];
 
+function Dashboard({}) {
   return(
     <div className="dashboard-grid">
-        <Main_info className="Main_info">
-        
-        </Main_info>
+      <Header/>
+      <Main_info className="Main_info"/>
+      <Footer/>
     </div>
   )
 }
