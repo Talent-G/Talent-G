@@ -1,9 +1,12 @@
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import "./styles.css";
 
-function Dashboard({children}) {
+function Dashboard({}) {
   return(
     <div className="dashboard-grid">
-      {children}
+      <Header/>
+      <Footer/>
     </div>
   )
 }
