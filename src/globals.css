@@ -9,3 +9,11 @@
   --button-primary: #4b4eff;
   --button-secondary: #7c8089;
 }
+
+.text-bold {
+  font-weight: 600;
+}
+
+.text-primary {
+  color: var(--button-primary);
+}
