@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import "./styles.css";
 import Boton from "../Boton";
 import Formulario from "../Formulario";
+import ListStudents from "../ListStudents";
 
 
-export default function Modal({ componente, children ,css, open, funcion }) {
+export default function Modal({ componente, children ,css, open,}) {
   //const [abierto, setAbierto] = useState(true);
  
 
@@ -14,7 +15,7 @@ export default function Modal({ componente, children ,css, open, funcion }) {
       <div className={css}>
         {componente === "Formulario" ? (
           <div>
-            <Formulario titulo={componente.nombre} />
+            <Formulario titulo="Perfil" />
             {children}           
           </div>
         ) : (
@@ -26,7 +27,6 @@ export default function Modal({ componente, children ,css, open, funcion }) {
   }
   
   Modal.defaultProps = {
-    open: false,
     css: "perfil_modal",
     componente:"-",
     
