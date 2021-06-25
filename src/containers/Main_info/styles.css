@@ -1,0 +1,53 @@
+@import "../../globals.css";
+
+.main__info{
+    display: grid;
+    width: 1008px;
+    height: 409px;
+    background: #f1f1f1;
+    border-radius: 10px;
+    grid-template-columns:1fr 1fr;
+    position: absolute;
+    top: 132px;
+    left: 376px;
+}
+
+.main__contenido{
+    font-family: Roboto;
+    size: 16px;
+    color:black;
+    padding-left: 36px;
+    width: 365px;
+    line-height: 19px;
+    height: 133px;
+}
+
+.main__titulo{
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 32px;
+    padding-left: 48px;
+    padding-top: 18px;
+    line-height: 37px;
+    color: var(--primary-color)
+}
+
+.main__recursos{
+    height: 76px;
+    width: 185px;
+    padding-top: 25px;
+    padding-left: 48px;
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}   
+
+.main__mauricio{
+    grid-column: 0 / span 1;
+}
+
+.main__arturo{
+    grid-column: 1 / span 0;
+    background-color: rgb(203, 203, 250);
+}

@@ -14,7 +14,7 @@ export default function Modal({ componente, children ,css, open, funcion }) {
       <div className={css}>
         {componente === "Formulario" ? (
           <div>
-            <Formulario titulo={componente} />
+            <Formulario titulo={componente.nombre} />
             {children}           
           </div>
         ) : (
