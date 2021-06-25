@@ -1,10 +1,10 @@
 import Dashboard from "./containers/Dashboard";
-//import React, { useState } from "react";
-//import Modal from "./components/Modal";
-//mport Boton from "./components/Boton";
+import React, { useState } from "react";
+// import Modal from "./components/Modal";
+// import Boton from "./components/Boton";
 
 function App() {
-  // const [open, setOpen] = useState(true);
+  //  const [open, setOpen] = useState(true);
 
   return (
     <div>
@@ -15,7 +15,7 @@ function App() {
                   Cerrar Modal
               </Boton>
           </Modal>
-      </div> */}
+      </div>  */}
 
       <Dashboard />
     </div>
