@@ -1,14 +1,15 @@
-import "./styles.css";
+import React from 'react';
+import './styles.css';
 
 export default function Button({ children, type = null, callback }) {
-  let className = "button";
+  let className = 'button';
   if (type) {
     className = `${className} ${type}`;
   }
 
   return (
     <div>
-      <button className={className} onClick={callback}>
+      <button className={className} onClick={callback} type='button'>
         {children}
       </button>
     </div>
@@ -17,6 +18,6 @@ export default function Button({ children, type = null, callback }) {
 
 Button.defaultProps = {
   callback: () => {
-    console.log("Hiciste click en el botón sin definir un callback!");
+    console.log('Hiciste click en el botón sin definir un callback!');
   },
 };
