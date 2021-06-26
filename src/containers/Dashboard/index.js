@@ -1,9 +1,9 @@
 import "./styles.css";
 
-function Dashboard({children}) {
+function Dashboard() {
   return(
     <div className="dashboard-grid">
-      {children}
+      
     </div>
   )
 }
