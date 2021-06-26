@@ -1,14 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-import "./styles.css";
+import './styles.css';
 
+const BotomCard = ({ children }) => {
+  return (
+    <div className='botomcard-container'>
+      {children}
+    </div>
+  );
+};
 
-const BotomCard = ({children}) => {
-    return (
-        <div className='botomcard-container'>
-            {children}
-        </div>
-    )
-}
-
-export default BotomCard
+export default BotomCard;

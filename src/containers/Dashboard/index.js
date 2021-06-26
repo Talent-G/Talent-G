@@ -1,15 +1,14 @@
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import "./styles.css";
-import Main_info from "../Main_info";
-
-
+import React from 'react';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import MainInfo from '../MainInfo';
+import './styles.css';
 
 function Dashboard() {
   return (
-    <div className="dashboard-grid">
+    <div className='dashboard-grid'>
       <Header />
-      <Main_info className="Main_info" />
+      <MainInfo className='Main_info' />
       <Footer />
     </div>
   );
