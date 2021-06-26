@@ -1,7 +1,8 @@
 :root {
-  --primary-color: #bed731;
+  --primary-color: #18181a;
   --secondary-color: #7c8089;
-  --tertiary-color: #18181a;
+  --tertiary-color: #4b4eff;
+
   --box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   --text-font-size: 1rem;
   --title-font-size: 2rem;
@@ -9,11 +10,9 @@
   --button-primary: #4b4eff;
   --button-secondary: #7c8089;
 }
-
 .text-bold {
   font-weight: 600;
 }
-
 .text-primary {
   color: var(--button-primary);
 }
