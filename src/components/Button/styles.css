@@ -1,0 +1,33 @@
+@import "../../globals.css";
+
+.button {
+  width: 357px;
+  height: 44px;
+  margin: 15px;
+  display: block;
+  color: gray;
+  font-size: var(--text-font-size);
+  border-radius: 10px;
+  border: none;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  transition: all ease 150ms;
+}
+
+.button:hover {
+  filter: brightness(85%);
+}
+
+.button:active {
+  filter: brightness(75%);
+}
+
+.primary-button {
+  color: white;
+  background-color: var(--button-primary);
+}
+
+.secondary-button {
+  color: white;
+  background-color: var(--button-secondary);
+}
