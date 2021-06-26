@@ -20,7 +20,7 @@ import Main_info from "../Main_info";
 //       "Css selectors"
 // ];
 
-function Dashboard({}) {
+function Dashboard() {
   return (
     <div className="dashboard-grid">
       <Header />
