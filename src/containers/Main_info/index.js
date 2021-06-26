@@ -50,7 +50,7 @@ Main_info.defaultProps = {
       "Flexbox",
       "Grid Css",
     ],
-    image: "https://via.placeholder.com/755x375",
+    image: "https://i.imgur.com/7QonOiu.png",
     trainer: "Juan Crisóstomo",
   },
   resources: ["What is flex?", "Understanding Grid layout", "Css selectors"],
