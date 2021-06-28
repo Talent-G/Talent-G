@@ -7,7 +7,7 @@ import './styles.css';
 function Survey() {
   return (
     <BottomCard>
-      <h1 className='survey__title'>Dia 1 - CSS Survey</h1>
+      <span className='survey__title'>Dia 1 - CSS Survey</span>
       <div className='survey__vote'>
         <button className='button__like' type='button'>
           <img className='vote__like' src={Like} alt='like' />

@@ -1,7 +1,9 @@
 @import url("../../globals.css");
 
 .survey__title {
+  margin: 0;
   font-size: var(--title-font-size);
+  color: var(--primary-color);
 }
 .survey__vote {
   text-align: center;

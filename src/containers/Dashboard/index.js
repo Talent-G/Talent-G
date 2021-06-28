@@ -5,6 +5,7 @@ import MainInfo from '../../components/MainInfo';
 import InfoProfile from '../../components/InfoProfile';
 import Feedback from '../../components/Feedback';
 import AsideButton from '../../components/AsideButton';
+import Survey from '../../components/Survey';
 
 import './styles.css';
 
@@ -29,7 +30,7 @@ function Dashboard() {
             <Feedback />
           </section>
           <section className='dashboard__survey'>
-            <Feedback />
+            <Survey />
           </section>
         </div>
       </div>
