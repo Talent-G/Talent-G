@@ -19,8 +19,8 @@ export default function MainInfo({ children, title, content, resources }) {
   ));
 
   return (
-    <div className='main__info'>
-      <div className='main__card'>
+    <div className='main__info '>
+      <div className='main__card wrapper'>
         <div className='main__left'>
           <div className='text__container'>
             <h1 className='main__title'>{title}</h1>

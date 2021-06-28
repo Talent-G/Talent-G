@@ -1,7 +1,11 @@
 @import url("../../globals.css");
 
+.aside_button {
+  margin: 10px 0;
+}
+
 .aside-button__text {
-  width: 281px;
+  /* width: 281px; */
   height: 72px;
   border: 1px solid #000000;
   border-radius: 5px;
@@ -12,8 +16,6 @@
   font-size: var(--subtitle-font-size);
   padding: 0 1rem;
   cursor: pointer;
-
-  background: #f1f1f1;
   box-shadow: var(--box-shadow);
   text-decoration: none;
   color: var(--primary-color);
@@ -31,7 +33,6 @@
 .aside-button__text:not(:hover) {
   transition-duration: 0.2s;
   color: var(--primary-color);
-  background: #f1f1f1;
 }
 
 .aside-button__text:not(:hover) > .aside-button__arrow {

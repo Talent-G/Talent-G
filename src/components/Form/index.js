@@ -3,7 +3,7 @@ import './styles.css';
 import Button from '../Button';
 import avatar from './avatar.jpg';
 
-export default function Formulario({ titulo }) {
+export default function Form({ titulo }) {
   const primario = 'primary-button';
 
   const [user, setUser] = useState({
@@ -75,7 +75,7 @@ export default function Formulario({ titulo }) {
     </div>
   );
 }
-Formulario.defaultProps = {
+Form.defaultProps = {
   open: false,
   titulo: 'perfil',
 };

@@ -1,20 +1,18 @@
-@import "../../globals.css";
+@import '../../globals.css';
 
 .main__info {
-  grid-area: agenda;
+  display: flex;
+  height: 100%;
 }
 
 .main__card {
-  margin: 1.75em;
-  height: 100%;
+  width: 100%;
   display: flex;
-  border-radius: 5px;
   grid-template-columns: 1fr 1fr;
-  border: 1px solid #000;
 }
 
 .main__left {
-  overflow: auto;
+  /* overflow: auto; */
   flex: 1;
 }
 
@@ -23,7 +21,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  overflow: auto;
+  /* overflow: auto; */
 }
 
 .image__container {
@@ -68,9 +66,20 @@
 }
 
 .main__title {
+  font-size: var(--title-font-size);
   font-weight: 500;
 }
 
 .main__resources--title {
   font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .main__card {
+    flex-direction: column;
+  }
+
+  .main__right {
+    margin: 1em 0;
+  }
 }

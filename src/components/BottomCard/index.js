@@ -4,7 +4,7 @@ import './styles.css';
 
 const BotomCard = ({ children }) => {
   return (
-    <div className='botomcard-container'>
+    <div className='wrapper botomcard-container'>
       {children}
     </div>
   );

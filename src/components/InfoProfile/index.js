@@ -6,7 +6,7 @@ import './styles.css';
 function InfoProfile({ name, rol, bootcamp, location, image }) {
 
   return (
-    <div className='profile'>
+    <div className='wrapper profile'>
       <div className='profile__image'>
         <img alt='profile' src={image} />
       </div>

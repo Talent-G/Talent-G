@@ -1,12 +1,10 @@
 @import url("../../globals.css");
 
 .botomcard-container {
-  width: 456px;
-  height: 206px;
+  /* width: 456px; */
+  max-height: 170px;
   padding: 2rem;
-  background: #f1f1f1;
-  border-radius: 10px;
   box-shadow: var(--box-shadow);
-  border: 1px solid #000000;
+  /* border: 1px solid #000000; */
   scroll-behavior: auto;
 }
