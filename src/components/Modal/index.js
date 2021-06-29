@@ -1,22 +1,40 @@
 import ReactDom from 'react-dom';
 import React from 'react';
 import './styles.css';
-import Formulario from '../Formulario';
+import Form from '../Form';
+import ListStudents from '../ListStudents';
 
-export default function Modal({ componente, children, css, open }) {
+export default function Modal({ componente, children, open }) {
   //const [abierto, setAbierto] = useState(true);
 
   if (!open) return null;
   return ReactDom.createPortal(
-    <div className={css}>
+    <div className='perfil_modal'>
       {componente === 'Formulario' ? (
         <div>
-          <Formulario titulo='Perfil' />
+          <Form />
           {children}
         </div>
-      ) : (
-        <p> No le llego ningun componente al modal </p>
-      )}
+      ) : componente === 'agenda' ? (
+        <p>
+          {' '}
+          Agenda
+          {children}
+        </p>
+      ) : componente === 'List_Students' ? (
+        <div>
+          {' '}
+          <ListStudents />
+          {children}
+        </div>
+      ) :
+        (
+          <p>
+            {' '}
+            No le llego ningun componente al modal
+            {children}
+          </p>
+        )}
     </div>,
     document.getElementById('portal'),
   );
