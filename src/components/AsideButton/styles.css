@@ -4,12 +4,12 @@
   margin: 10px 0;
   background:none;
   border: none;
-  width: 241px;
+  width: 100%;
   outline: none;
 }
 
 .aside-button__text {
-  /* width: 281px; */
+  /* width: 100%; */
   height: 72px;
   border: 1px solid #000000;
   border-radius: 5px;
