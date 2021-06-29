@@ -2,6 +2,10 @@
 
 .aside_button {
   margin: 10px 0;
+  background:none;
+  border: none;
+  width: 241px;
+  outline: none;
 }
 
 .aside-button__text {
