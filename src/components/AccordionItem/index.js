@@ -16,9 +16,9 @@ const AccordionItem = ({ title, content }) => {
           <img className='toggle' src={Chevron} aria-expanded={isActive} alt='Toggle Accordion' />
           <span>{title}</span>
         </div>
-        {/* {isActive && <div className="accordion-content" aria-expanded={!isActive}>{content}</div>} */}
         <div className="accordion-content" aria-expanded={!isActive}>{content}</div>
       </div>
+      <hr className='accordion-item__divider' />
     </>
   );
 };

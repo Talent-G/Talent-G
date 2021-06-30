@@ -4,16 +4,3 @@
   font-size: 2rem;
   color: var(--primary-color);
 }
-.accordion-item {
-}
-
-.students-items {
-  padding: 0;
-}
-.accordion-content {
-  padding: 0.5rem 0;
-  font-style: normal;
-  font-weight: normal;
-  font-size: var(--subtitle-font-size);
-  list-style: none;
-}
