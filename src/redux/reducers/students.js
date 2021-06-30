@@ -34,7 +34,8 @@ export default function reducer(state = initialState, { type, payload }) {
     case 'FETCH_USER_SUCCESS':
       return {
         ...state,
-        payload,
+        loading: false,
+        content: payload,
       };
     case 'FETCH_USER_FAILURE':
       return {

@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ProfileData from '../ProfileData';
+import Loading from '../Loading';
 import Profile from '../../statics/user_icon_512px.png';
 import './styles.css';
 
 function InfoProfile({ rol, bootcamp, location, image, loading }) {
 
   if (loading) {
-    return null;
+    return <Loading />;
   }
 
   return (
@@ -39,7 +40,7 @@ InfoProfile.defaultProps = {
 
 const mapStateToProps = (state) => {
   return {
-    // location: state.students.content.location,
+    location: state?.students?.content?.location,
     loading: state.students.loading,
   };
 };
