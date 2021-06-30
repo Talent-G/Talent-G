@@ -12,8 +12,14 @@ import './styles.css';
 const eye = <FontAwesomeIcon icon={faEye} />;
 
 function Login() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm({
+    defaultValues: {
+      username: '',
+      password: '',
+    },
+  });
   const [passwordInput, setInput] = useState(false);
+  const [passwordShown, setPasswordShown] = useState(false);
 
   const switchInput = (input) => {
     setInput(input);
@@ -21,6 +27,10 @@ function Login() {
 
   const onSubmit = (data) => {
     console.log(data);
+  };
+
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(!passwordShown);
   };
 
   return (
@@ -57,9 +67,11 @@ function Login() {
                   id='password'
                   className='input'
                   {...register('password', { required: 'This is required.' })}
-                  type='password'
+                  type={passwordShown ? 'text' : 'password'}
                 />
-                <i>{eye}</i>
+                <i role='button' tabIndex={0} onClick={togglePasswordVisiblity}>
+                  {eye}
+                </i>
                 <div className='form__button'>
                   <Button
                     type='primary-button'

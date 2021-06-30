@@ -28,9 +28,10 @@
 
 i {
   position: absolute;
-  top: 47.25%;
-  right: 40.5%;
+  top: 37px;
+  right: 15px;
 }
+
 i:hover {
   color: var(--button-primary);
   cursor: pointer;
@@ -52,6 +53,7 @@ i:hover {
   display: flex;
   flex-direction: column;
   margin: 0 15px;
+  position: relative;
 }
 
 .input {
