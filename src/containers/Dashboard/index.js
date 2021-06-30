@@ -12,6 +12,7 @@ import Modal from '../../components/Modal';
 import './styles.css';
 
 function Dashboard() {
+
   const color = ['rgba(0,0,0,0)', 'rgba(54,54,54,0.77)'];
   const [open, setOpen] = useState(false);
   const [colorTransparent, setColorTransparent] = useState(color[0]);

@@ -1,16 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import ProfileData from '../ProfileData';
 import Profile from '../../statics/user_icon_512px.png';
 import './styles.css';
 
-function InfoProfile({ name, rol, bootcamp, location, image }) {
+function InfoProfile({ rol, bootcamp, location, image, loading }) {
+
+  if (loading) {
+    return null;
+  }
 
   return (
     <div className='wrapper profile'>
       <div className='profile__image'>
         <img alt='profile' src={image} />
       </div>
-      <ProfileData name={name} rol={rol} />
+      <ProfileData rol={rol} />
       <div className='profile__info'>
         <div className='info__container'>
           <h2>Bootcamp</h2>
@@ -26,11 +31,17 @@ function InfoProfile({ name, rol, bootcamp, location, image }) {
 }
 
 InfoProfile.defaultProps = {
-  name: 'Miguel Romero',
   rol: 'Trainer',
   bootcamp: 'Web UI',
-  location: 'CDMX',
+  location: '',
   image: Profile,
 };
 
-export default InfoProfile;
+const mapStateToProps = (state) => {
+  return {
+    // location: state.students.content.location,
+    loading: state.students.loading,
+  };
+};
+
+export default connect(mapStateToProps, null)(InfoProfile);

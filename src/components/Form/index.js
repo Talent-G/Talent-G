@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import './styles.css';
+import changeProfileInfo from '../../redux/actions/changeProfileInfo';
 import Button from '../Button';
 import avatar from './avatar.jpg';
 
-export default function Form({ titulo }) {
+function Form({ firstName, lastName, summary, changeProfileInfo }) {
   const [user, setUser] = useState({
-    nombre: '',
-    apellido: '',
-    sumary: '',
+    firstName,
+    lastName,
+    summary,
   });
 
   const enviar = (event) => {
     event.preventDefault();
     console.log(user);
+    changeProfileInfo({ ...user });
   };
 
   const action = (event) => {
@@ -38,37 +41,37 @@ export default function Form({ titulo }) {
             </div>
           </div>
           <div className='text_contet'>
-            <label htmlFor='nombre' className='label_text label'> Nombre </label>
+            <label htmlFor='firstName' className='label_text label'> Nombre </label>
             <br />
             <input
               className='label text_input'
               onChange={action}
-              id='nombre'
-              value={user.nombre}
-              name='nombre'
+              id='firstName'
+              value={user.firstName}
+              name='firstName'
               type='text'
             />
             {' '}
             <br />
-            <label htmlFor='apellido' className=' label_text label'> Apellido</label>
+            <label htmlFor='lastName' className=' label_text label'> Apellido</label>
             <br />
             <input
               className='label text_input'
-              name='apellido'
-              id='apellido'
+              name='lastName'
+              id='lastName'
               onChange={action}
-              value={user.apellido}
-              type='text'
+              value={user.lastName}
+              type='lastName'
             />
             <br />
-            <label htmlFor='sumary' className='label'> Summary </label>
+            <label htmlFor='summary' className='label'> Summary </label>
             <br />
             <textarea
               className='label text_area'
-              id='sumary'
+              id='summary'
               onChange={action}
-              value={user.sumary}
-              name='sumary'
+              value={user.summary}
+              name='summary'
             />
             <Button callback={enviar} type='primary-button'> Guardar</Button>
           </div>
@@ -81,3 +84,17 @@ Form.defaultProps = {
   open: false,
   titulo: 'perfil',
 };
+
+const mapStateToProps = (state) => {
+  return {
+    firstName: state.students.content.firstName,
+    lastName: state.students.content.lastName,
+    summary: state.students.content.summary,
+  };
+};
+
+const mapDispatchToProps = {
+  changeProfileInfo,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
