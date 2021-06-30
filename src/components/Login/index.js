@@ -1,9 +1,11 @@
-import React from 'react';
+/* eslint-disable react/jsx-props-no-spreading */
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import arrowLogo from '../statics/G.png';
+import Button from '../Button';
 
 import './styles.css';
 
@@ -11,6 +13,12 @@ const eye = <FontAwesomeIcon icon={faEye} />;
 
 function Login() {
   const { register, handleSubmit } = useForm();
+  const [passwordInput, setInput] = useState(false);
+
+  const switchInput = (input) => {
+    setInput(input);
+  };
+
   const onSubmit = (data) => {
     console.log(data);
   };
@@ -24,27 +32,50 @@ function Login() {
             <img src={arrowLogo} alt='logo' />
           </div>
           <div className='form__input'>
-            <input
-              name='username'
-              type='text'
-              placeholder='Username'
-              ref={register({ required: 'This is required.' })}
-            />
-            <div className='pass-wrapper'>
-              <input
-                placeholder='Password'
-                name='password'
-                type='password'
-                ref={register({ required: 'This is required.' })}
-              />
-              <i>{eye}</i>
-            </div>
-            <button type='submit' onClick={handleSubmit(onSubmit)}>
-              Submit
-            </button>
-          </div>
-          <div className='form__button'>
-            button
+            {!passwordInput ? (
+              <div className='form__input--container'>
+                <label htmlFor='name'>Dirección email</label>
+                <input
+                  id='name'
+                  className='input'
+                  {...register('username', { required: 'This is required.' })}
+                  type='text'
+                />
+                <div className='form__button'>
+                  <Button
+                    type='primary-button'
+                    callback={() => switchInput(!passwordInput)}
+                  >
+                    <span>Siguiente</span>
+                  </Button>
+                </div>
+              </div>
+            ) : (
+              <div className='form__input--container'>
+                <label htmlFor='password'>Contraseña</label>
+                <input
+                  id='password'
+                  className='input'
+                  {...register('password', { required: 'This is required.' })}
+                  type='password'
+                />
+                <i>{eye}</i>
+                <div className='form__button'>
+                  <Button
+                    type='primary-button'
+                    callback={handleSubmit(onSubmit)}
+                  >
+                    <span>Iniciar Sesión</span>
+                  </Button>
+                  <Button
+                    type='other'
+                    callback={() => switchInput(!passwordInput)}
+                  >
+                    <span>Usar otra cuenta</span>
+                  </Button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
