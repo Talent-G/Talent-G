@@ -1,10 +1,9 @@
-import axios from 'axios';
 
-// const fetchUserRequest = () => {
-//   return {
-//     type: 'FETCH_USER_REQUEST',
-//   };
-// };
+const fetchUserRequest = () => {
+  return {
+    type: 'FETCH_USER_REQUEST',
+  };
+};
 
 const fetchUserSuccess = (payload) => {
   return {
@@ -22,9 +21,10 @@ const fetchUserFailure = (payload) => {
 
 const fetchUser = () => {
   return (dispatch) => {
-    // dispatch(fetchUserRequest);
-    axios.get('http://proyectofinalbootcamp-env.eba-nmb4rsib.us-east-2.elasticbeanstalk.com/student/2')
+    dispatch(fetchUserRequest);
+    fetch('http://proyectofinalbootcamp-env.eba-nmb4rsib.us-east-2.elasticbeanstalk.com/student/2')
       .then((response) => {
+        console.log('resp', response);
         const user = response.data;
         dispatch(fetchUserSuccess(user));
       })

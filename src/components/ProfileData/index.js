@@ -32,8 +32,8 @@ ProfileData.defaultProps = {
 
 const mapStateToProps = (state) => {
   return {
-    firstName: state.students.content.firstName,
-    lastName: state.students.content.lastName,
+    firstName: state?.students?.content?.firstName,
+    lastName: state?.students?.content?.lastName,
   };
 };
 

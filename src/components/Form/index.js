@@ -87,9 +87,9 @@ Form.defaultProps = {
 
 const mapStateToProps = (state) => {
   return {
-    firstName: state.students.content.firstName,
-    lastName: state.students.content.lastName,
-    summary: state.students.content.summary,
+    firstName: state?.students?.content?.firstName,
+    lastName: state?.students?.content?.lastName,
+    summary: state?.students?.content?.summary,
   };
 };
 

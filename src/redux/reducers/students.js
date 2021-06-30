@@ -1,21 +1,22 @@
 const initialState = {
-  'message': '',
-  'content': {
-    'id': 0,
-    'firstName': '',
-    'lastName': '',
-    'email': '',
-    'location': '',
-    'summary': '',
-    'training': {
-      'id': 0,
-      'trainingName': '',
-      'status': true,
-      'initialDate': '',
-      'finalDate': '',
+  loading: false,
+  message: '',
+  content: {
+    id: 0,
+    firstName: '',
+    lastName: '',
+    email: '',
+    location: '',
+    summary: '',
+    training: {
+      id: 0,
+      trainingName: '',
+      status: true,
+      initialDate: '',
+      finalDate: '',
     },
   },
-  'status': '',
+  status: '',
 };
 
 export default function reducer(state = initialState, { type, payload }) {
