@@ -10,6 +10,21 @@ import Survey from '../../components/Survey';
 import './styles.css';
 
 function Dashboard() {
+  const [open, setOpen] = useState(false);
+  const [component, setComponent] = useState('');
+  const actionModal = (componentName) => {
+    setComponent(componentName);
+    setOpen(!open);
+  };
+  const verModal = (component) => {
+    return (
+      <Modal componente={component} open={open}>
+        <Button callback={() => setOpen(!open)} type='secondary-button'> Cerrar </Button>
+      </Modal>
+    );
+
+  };
+
   return (
     <div className='dashboard'>
       <Header />

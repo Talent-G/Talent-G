@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import './styles.css';
+import changeProfileInfo from '../../redux/actions/changeProfileInfo';
 import Button from '../Button';
 import avatar from './avatar.jpg';
 
-export default function Form({ titulo }) {
-  const primario = 'primary-button';
-
+function Form({ firstName, lastName, summary, changeProfileInfo }) {
   const [user, setUser] = useState({
-    nombre: '',
-    apellido: '',
-    sumary: '',
+    firstName,
+    lastName,
+    summary,
   });
 
   const enviar = (event) => {
     event.preventDefault();
     console.log(user);
+    changeProfileInfo({ ...user });
   };
 
   const action = (event) => {
@@ -39,35 +40,41 @@ export default function Form({ titulo }) {
               <img className='foto_avatar' src={avatar} alt='logo' />
             </div>
           </div>
-          <label className='label_text label'> Nombre </label>
-          <br />
-          <input
-            className='label text_input'
-            onChange={action}
-            value={user.nombre}
-            name='nombre'
-            type='text'
-          />
-          {' '}
-          <br />
-          <label className=' label_text label'> Apellido</label>
-          <br />
-          <input
-            className='label text_input'
-            name='apellido'
-            onChange={action}
-            value={user.apellido}
-            type='text'
-          />
-          <br />
-          <label className='label'> Sumary </label>
-          <br />
-          <textarea
-            className='label text_area'
-            onChange={action}
-            value={user.sumary}
-            name='sumary'
-          />
+          <div className='text_contet'>
+            <label htmlFor='firstName' className='label_text label'> Nombre </label>
+            <br />
+            <input
+              className='label text_input'
+              onChange={action}
+              id='firstName'
+              value={user.firstName}
+              name='firstName'
+              type='text'
+            />
+            {' '}
+            <br />
+            <label htmlFor='lastName' className=' label_text label'> Apellido</label>
+            <br />
+            <input
+              className='label text_input'
+              name='lastName'
+              id='lastName'
+              onChange={action}
+              value={user.lastName}
+              type='lastName'
+            />
+            <br />
+            <label htmlFor='summary' className='label'> Summary </label>
+            <br />
+            <textarea
+              className='label text_area'
+              id='summary'
+              onChange={action}
+              value={user.summary}
+              name='summary'
+            />
+            <Button callback={enviar} type='primary-button'> Guardar</Button>
+          </div>
         </div>
         <Button children='Guardar' tipo={primario} type='submit' />
 
@@ -79,3 +86,17 @@ Form.defaultProps = {
   open: false,
   titulo: 'perfil',
 };
+
+const mapStateToProps = (state) => {
+  return {
+    firstName: state?.students?.content?.firstName,
+    lastName: state?.students?.content?.lastName,
+    summary: state?.students?.content?.summary,
+  };
+};
+
+const mapDispatchToProps = {
+  changeProfileInfo,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);

@@ -1,17 +1,20 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch, connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import arrowLogo from '../statics/G.png';
 import Button from '../Button';
+import fakeLogin from '../../redux/actions/fakeLogin';
 
 import './styles.css';
 
 const eye = <FontAwesomeIcon icon={faEye} />;
 
-function Login() {
+function Login({ auth }) {
   const { register, handleSubmit } = useForm({
     defaultValues: {
       username: '',
@@ -20,6 +23,8 @@ function Login() {
   });
   const [passwordInput, setInput] = useState(false);
   const [passwordShown, setPasswordShown] = useState(false);
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   const switchInput = (input) => {
     setInput(input);
@@ -27,11 +32,18 @@ function Login() {
 
   const onSubmit = (data) => {
     console.log(data);
+    dispatch(fakeLogin(true));
   };
 
   const togglePasswordVisiblity = () => {
     setPasswordShown(!passwordShown);
   };
+
+  useEffect(() => {
+    if (auth) {
+      history.push('/');
+    }
+  }, [auth]);
 
   return (
     <div className='Login__component'>
@@ -95,4 +107,14 @@ function Login() {
   );
 }
 
-export default Login;
+Login.defaultProps = {
+  auth: false,
+};
+
+const mapStateToProps = (state) => {
+  return {
+    auth: state?.students?.auth,
+  };
+};
+
+export default connect(mapStateToProps, null)(Login);
