@@ -21,4 +21,12 @@ const Accordion = ({ headTitle, content }) => {
   );
 };
 
+Accordion.defaultProps = {
+  headTitle: 'Accordion Group Title',
+  content: [{
+    title: 'Accordion Element',
+    content: 'Lorem ipsum dolor sit amet, quis culpa elit eiusmod incididunt voluptate elit irure ipsum nisi',
+    }],
+  };
+
 export default Accordion;

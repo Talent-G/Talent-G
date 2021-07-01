@@ -23,4 +23,9 @@ const AccordionItem = ({ title, content }) => {
   );
 };
 
+AccordionItem.defaultProps = {
+  title: 'Accordion Element',
+  content: 'Lorem ipsum dolor sit amet, quis culpa elit eiusmod incididunt voluptate elit irure ipsum nisi',
+  };
+
 export default AccordionItem;

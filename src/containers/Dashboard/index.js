@@ -29,7 +29,7 @@ function Dashboard() {
 
   return (
     <div className='dashboard'>
-      <Header />
+      <Header action={() => actionModal('Formulario')} />
       <div className='dashboard__container'>
         <div className='dashboard-grid'>
           <section className='dashboard__userCard'>
@@ -40,7 +40,7 @@ function Dashboard() {
           </section>
           <section className='dashboard__buttons wrapper'>
             <AsideButton lbl='Editar Perfil' action={() => actionModal('Formulario')} />
-            <AsideButton lbl='Ver Agenda' action={() => actionModal('--')} />
+            <AsideButton lbl='Ver Agenda' action={() => actionModal('Agenda')} />
             <AsideButton lbl='Ver Feedback' action={() => actionModal('Feedback_Accordeon')} />
           </section>
           <section className='dashboard__feedback'>
