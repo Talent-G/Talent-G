@@ -107,6 +107,10 @@ function Login({ auth }) {
   );
 }
 
+Login.defaultProps = {
+  auth: false,
+};
+
 const mapStateToProps = (state) => {
   return {
     auth: state?.students?.auth,
