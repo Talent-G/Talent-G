@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import './styles.css';
@@ -32,9 +33,7 @@ function Form({ firstName, lastName, summary, changeProfileInfo }) {
         <div className='label_form'>
           <div className='cabecera'>
             <h1>
-              {' '}
               Perfil
-              {' '}
             </h1>
             <div className=''>
               <img className='foto_avatar' src={avatar} alt='logo' />
