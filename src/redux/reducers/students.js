@@ -1,4 +1,5 @@
 const initialState = {
+  auth: false,
   loading: false,
   message: '',
   content: {
@@ -17,6 +18,7 @@ const initialState = {
     },
   },
   status: '',
+  type: '',
 };
 
 export default function reducer(state = initialState, { type, payload }) {
@@ -37,10 +39,22 @@ export default function reducer(state = initialState, { type, payload }) {
         loading: false,
         content: payload,
       };
+    case 'LOGIN_USER_SUCCESS':
+      return {
+        ...state,
+        loading: false,
+        auth: true,
+        content: payload,
+      };
     case 'FETCH_USER_FAILURE':
       return {
         loading: false,
         error: payload,
+      };
+    case 'FAKE_LOGIN_SUCCESS':
+      return {
+        loading: false,
+        auth: payload,
       };
     default:
       return state;
