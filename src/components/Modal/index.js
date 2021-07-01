@@ -1,7 +1,8 @@
 import ReactDom from 'react-dom';
 import React from 'react';
 import './styles.css';
-import Formulario from '../Formulario';
+import Form from '../Form';
+import ListStudents from '../StudentList';
 
 export default function Modal({ componente, children, css, open }) {
   //const [abierto, setAbierto] = useState(true);
