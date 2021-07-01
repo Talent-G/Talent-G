@@ -6,6 +6,7 @@ import InfoProfile from '../../components/InfoProfile';
 import Feedback from '../../components/Feedback';
 import AsideButton from '../../components/AsideButton';
 import Survey from '../../components/Survey';
+import Accordion from '../../components/Accordion';
 
 import './styles.css';
 
@@ -34,6 +35,7 @@ function Dashboard() {
           </section>
         </div>
       </div>
+      <Accordion />
       <Footer />
     </div>
   );
