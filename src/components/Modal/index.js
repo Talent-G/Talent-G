@@ -1,11 +1,11 @@
 import ReactDom from 'react-dom';
 import React from 'react';
-import './styles.css';
 import Form from '../Form';
 import Accordion from '../Accordion';
+import './styles.css';
 
 export default function Modal({ componente, children, css, open }) {
-  //const [abierto, setAbierto] = useState(true);
+  // const [abierto, setAbierto] = useState(true);
 
   if (!open) return null;
   return ReactDom.createPortal(
