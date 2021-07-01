@@ -6,7 +6,6 @@ import InfoProfile from '../../components/InfoProfile';
 import Feedback from '../../components/Feedback';
 import AsideButton from '../../components/AsideButton';
 import Survey from '../../components/Survey';
-import Accordion from '../../components/Accordion';
 
 import './styles.css';
 
@@ -34,23 +33,6 @@ function Dashboard() {
             <Survey />
           </section>
         </div>
-        <Accordion
-          headTitle='Agenda'
-          content={[
-            {
-              title: 'Dia 1 - Css',
-              content: 'eu deserunt irure esse ut',
-            },
-            {
-              title: 'Dia 2 - HTML Semantico',
-              content: 'eu deserunt irure esse ut',
-            },
-            {
-              title: 'Dia 3 - Js Basics',
-              content: 'eu deserunt irure esse ut',
-            },
-          ]}
-        />
       </div>
       <Footer />
     </div>
