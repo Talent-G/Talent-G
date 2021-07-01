@@ -1,8 +1,8 @@
 import ReactDom from 'react-dom';
 import React from 'react';
-import './styles.css';
 import Form from '../Form';
 import Accordion from '../Accordion';
+import './styles.css';
 
 export default function Modal({ componente, children, open, cerrarModal }) {
   if (!open) return null;

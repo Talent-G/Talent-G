@@ -5,7 +5,7 @@ import Loading from '../Loading';
 import Profile from '../../statics/user_icon_512px.png';
 import './styles.css';
 
-function InfoProfile({ rol, bootcamp, location, image, loading }) {
+function InfoProfile({ rol, trainingName, location, image, loading }) {
 
   if (loading) {
     return <Loading />;
@@ -20,7 +20,7 @@ function InfoProfile({ rol, bootcamp, location, image, loading }) {
       <div className='profile__info'>
         <div className='info__container'>
           <h2>Bootcamp</h2>
-          <span>{bootcamp}</span>
+          <span>{trainingName}</span>
         </div>
         <div className='info__container'>
           <h2>Ubicacion</h2>
@@ -41,6 +41,7 @@ InfoProfile.defaultProps = {
 const mapStateToProps = (state) => {
   return {
     location: state?.students?.content?.location,
+    trainingName: state?.students?.content?.training?.trainingName,
     loading: state.students.loading,
   };
 };
