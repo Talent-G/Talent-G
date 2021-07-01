@@ -1,31 +1,47 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import './styles.css';
 
-export default function MainInfo({ children, title, content, resources }) {
+export default function MainInfo({ children, title: day, content, resources }) {
+
+  const [dataInfo, setDataInfo] = useState({});
+  if (!dataInfo) {
+    return null;
+  }
   const listTasks = content.list_tasks.map((task) => (
     <li>
       {' '}
       {task}
     </li>
   ));
-  const listResources = resources.map((recurso) => (
+  const listResources = dataInfo?.content?.resourceDTOList.map((recurso) => (
     <li>
       <a href='todo:replaceRoute'>
         {' '}
-        {recurso}
+        {recurso.summary}
         {' '}
       </a>
     </li>
   ));
+
+  useEffect(() => {
+    axios.get('http://proyectofinalbootcamp-env.eba-nmb4rsib.us-east-2.elasticbeanstalk.com/schedule/1')
+      .then((response) => {
+        console.log(response);
+        setDataInfo(response.data);
+      });
+  }, []);
 
   return (
     <div className='main__info '>
       <div className='main__card wrapper'>
         <div className='main__left'>
           <div className='text__container'>
-            <h1 className='main__title'>{title}</h1>
+            <h1 className='main__title'>
+              {`Día ${dataInfo?.content?.day} - ${dataInfo?.content?.topic}`}
+            </h1>
             <div className='main_content'>
-              {content.caption}
+              {dataInfo?.content?.summary}
               <ol className='main__classes'>{listTasks}</ol>
             </div>
             <div className='main__resources'>
@@ -36,7 +52,7 @@ export default function MainInfo({ children, title, content, resources }) {
         </div>
         <div className='main__right'>
           <div className='image__container'>
-            <img className='main__image' src={content.image} alt={title} />
+            <img className='main__image' src={content.image} alt={day} />
             <figcaption className='main__trainer'>
               <span className='text-bold'>Trainer:</span>
               {' '}
