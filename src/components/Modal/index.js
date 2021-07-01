@@ -2,7 +2,7 @@ import ReactDom from 'react-dom';
 import React from 'react';
 import './styles.css';
 import Form from '../Form';
-import ListStudents from '../StudentList';
+import Accordion from '../Accordion';
 
 export default function Modal({ componente, children, css, open }) {
   //const [abierto, setAbierto] = useState(true);
@@ -22,10 +22,16 @@ export default function Modal({ componente, children, css, open }) {
             Agenda
             {children}
           </p>
-        ) : componente === 'List_Students' ? (
+        ) : componente === 'Feedback_Accordeon' ? (
           <div>
             {' '}
-            <ListStudents />
+            <Accordion />
+            {children}
+          </div>
+        ) : componente === 'Agenda' ? (
+          <div>
+            {' '}
+            Aqui iria una componente Agenda si estuviera
             {children}
           </div>
         ) :

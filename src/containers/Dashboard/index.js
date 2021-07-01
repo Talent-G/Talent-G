@@ -25,12 +25,11 @@ function Dashboard() {
         <Button callback={() => setOpen(!open)} type='secondary-button'> Cerrar </Button>
       </Modal>
     );
-
   };
 
   return (
     <div className='dashboard'>
-      <Header />
+      <Header action={() => actionModal('Formulario')} />
       <div className='dashboard__container'>
         <div className='dashboard-grid'>
           <section className='dashboard__userCard'>
@@ -40,9 +39,9 @@ function Dashboard() {
             <MainInfo />
           </section>
           <section className='dashboard__buttons wrapper'>
-            <AsideButton lbl='Editar Perfil' />
-            <AsideButton lbl='Ver Agenda' />
-            <AsideButton lbl='Ver Feedback' />
+            <AsideButton lbl='Editar Perfil' action={() => actionModal('Formulario')} />
+            <AsideButton lbl='Ver Agenda' action={() => actionModal('Agenda')} />
+            <AsideButton lbl='Ver Feedback' action={() => actionModal('Feedback_Accordeon')} />
           </section>
           <section className='dashboard__feedback'>
             <Feedback />

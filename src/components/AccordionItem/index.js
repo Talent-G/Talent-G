@@ -29,4 +29,3 @@ AccordionItem.defaultProps = {
   };
 
 export default AccordionItem;
-

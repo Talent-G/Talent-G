@@ -30,4 +30,3 @@ Accordion.defaultProps = {
   };
 
 export default Accordion;
-

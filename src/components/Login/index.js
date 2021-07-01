@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import arrowLogo from '../statics/G.png';
 import Button from '../Button';
-import fakeLogin from '../../redux/actions/fakeLogin';
+import loginRequest from '../../redux/actions/loginRequest';
 
 import './styles.css';
 
@@ -32,7 +32,7 @@ function Login({ auth }) {
 
   const onSubmit = (data) => {
     console.log(data);
-    dispatch(fakeLogin(true));
+    dispatch(loginRequest(data.username, 'student'));
   };
 
   const togglePasswordVisiblity = () => {
