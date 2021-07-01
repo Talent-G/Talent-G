@@ -12,32 +12,24 @@ import Modal from '../../components/Modal';
 import './styles.css';
 
 function Dashboard() {
-  const color = ['rgba(0,0,0,0)', 'rgba(54,54,54,0.77)'];
   const [open, setOpen] = useState(false);
-  const [colorTransparent, setColorTransparent] = useState(color[0]);
   const [component, setComponent] = useState('');
-  const changePropierties = () => {
-    setOpen(!open);
-    if (open === true) { setColorTransparent(color[0]); }
-    if (open === false) { setColorTransparent(color[1]); }
-  };
-
   const actionModal = (componentName) => {
     setComponent(componentName);
-    changePropierties();
+    setOpen(!open);
   };
   const verModal = (component) => {
     return (
       <Modal componente={component} open={open}>
-        <Button callback={changePropierties} type='secondary-button'> Cerrar </Button>
+        <Button callback={() => setOpen(!open)} type='secondary-button'> Cerrar </Button>
       </Modal>
     );
 
   };
 
   return (
-    <div className='dashboard' style={{ backgroundColor: colorTransparent }}>
-      <Header />
+    <div className='dashboard'>
+      <Header action={() => actionModal('Formulario')} />
       <div className='dashboard__container'>
         <div className='dashboard-grid'>
           <section className='dashboard__userCard'>
@@ -48,8 +40,8 @@ function Dashboard() {
           </section>
           <section className='dashboard__buttons wrapper'>
             <AsideButton lbl='Editar Perfil' action={() => actionModal('Formulario')} />
-            <AsideButton lbl='Ver Agenda' action={() => actionModal('--')} />
-            <AsideButton lbl='Ver Feedback' action={() => actionModal('List_Students')} />
+            <AsideButton lbl='Ver Agenda' action={() => actionModal('Agenda')} />
+            <AsideButton lbl='Ver Feedback' action={() => actionModal('Feedback_Accordeon')} />
           </section>
           <section className='dashboard__feedback'>
             <Feedback />
