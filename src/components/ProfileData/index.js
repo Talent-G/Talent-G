@@ -1,18 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, connect } from 'react-redux';
-import fetchUser from '../../redux/actions/fetchUserRequest';
+import React from 'react';
+import { connect } from 'react-redux';
 
 function ProfileData({ firstName, lastName, rol }) {
-
-  const dispatch = useDispatch();
-  const [user, setUser] = useState([]);
-
-  useEffect(() => {
-    if (user.length === 0) {
-      dispatch(fetchUser());
-      setUser([{}, {}]);
-    }
-  });
 
   return (
     <div className='profile__data'>
