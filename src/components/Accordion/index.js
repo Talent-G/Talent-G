@@ -2,7 +2,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-quotes */
 import React from 'react';
-// import Button from '../Button/index';
 import AccordionItem from '../AccordionItem';
 import './styles.css';
 
@@ -17,7 +16,6 @@ const Accordion = ({ headTitle, content }) => {
             <AccordionItem title={title} content={content} />
           ))}
         </div>
-        {/* <Button /> */}
       </div>
     </>
   );
