@@ -26,7 +26,7 @@ export default function reducer(state = initialState, { type, payload }) {
     case 'CHANGE_PROFILE_INFO':
       return {
         ...state,
-        content: payload,
+        content: { ...state.content, ...payload },
       };
     case 'FETCH_USER_REQUEST':
       return {
