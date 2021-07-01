@@ -4,8 +4,6 @@ import Button from '../Button';
 import avatar from './avatar.jpg';
 
 export default function Form({ titulo }) {
-  const primario = 'primary-button';
-
   const [user, setUser] = useState({
     nombre: '',
     apellido: '',
@@ -32,45 +30,49 @@ export default function Form({ titulo }) {
           <div className='cabecera'>
             <h1>
               {' '}
-              {titulo}
+              Perfil
               {' '}
             </h1>
             <div className=''>
               <img className='foto_avatar' src={avatar} alt='logo' />
             </div>
           </div>
-          <label className='label_text label'> Nombre </label>
-          <br />
-          <input
-            className='label text_input'
-            onChange={action}
-            value={user.nombre}
-            name='nombre'
-            type='text'
-          />
-          {' '}
-          <br />
-          <label className=' label_text label'> Apellido</label>
-          <br />
-          <input
-            className='label text_input'
-            name='apellido'
-            onChange={action}
-            value={user.apellido}
-            type='text'
-          />
-          <br />
-          <label className='label'> Sumary </label>
-          <br />
-          <textarea
-            className='label text_area'
-            onChange={action}
-            value={user.sumary}
-            name='sumary'
-          />
+          <div className='text_contet'>
+            <label htmlFor='nombre' className='label_text label'> Nombre </label>
+            <br />
+            <input
+              className='label text_input'
+              onChange={action}
+              id='nombre'
+              value={user.nombre}
+              name='nombre'
+              type='text'
+            />
+            {' '}
+            <br />
+            <label htmlFor='apellido' className=' label_text label'> Apellido</label>
+            <br />
+            <input
+              className='label text_input'
+              name='apellido'
+              id='apellido'
+              onChange={action}
+              value={user.apellido}
+              type='text'
+            />
+            <br />
+            <label htmlFor='sumary' className='label'> Summary </label>
+            <br />
+            <textarea
+              className='label text_area'
+              id='sumary'
+              onChange={action}
+              value={user.sumary}
+              name='sumary'
+            />
+            <Button callback={enviar} type='primary-button'> Guardar</Button>
+          </div>
         </div>
-        <Button children='Guardar' tipo={primario} type='submit' />
-
       </form>
     </div>
   );
