@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import MainInfo from '../../components/MainInfo';
@@ -8,6 +8,7 @@ import Feedback from '../../components/Feedback';
 import AsideButton from '../../components/AsideButton';
 import Survey from '../../components/Survey';
 import Modal from '../../components/Modal';
+import Button from '../../components/Button';
 
 import './styles.css';
 
