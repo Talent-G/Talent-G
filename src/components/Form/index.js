@@ -33,9 +33,7 @@ function Form({ firstName, lastName, summary, changeProfileInfo }) {
         <div className='label_form'>
           <div className='cabecera'>
             <h1>
-              {' '}
-              {titulo}
-              {' '}
+              Perfil
             </h1>
             <div className=''>
               <img className='foto_avatar' src={avatar} alt='logo' />
@@ -77,8 +75,6 @@ function Form({ firstName, lastName, summary, changeProfileInfo }) {
             <Button callback={enviar} type='primary-button'> Guardar</Button>
           </div>
         </div>
-        <Button children='Guardar' tipo={primario} type='submit' />
-
       </form>
     </div>
   );
