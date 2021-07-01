@@ -24,7 +24,6 @@ function Dashboard() {
         <Button callback={() => setOpen(!open)} type='secondary-button'> Cerrar </Button>
       </Modal>
     );
-
   };
 
   return (
