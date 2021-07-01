@@ -20,7 +20,7 @@ function Dashboard() {
   };
   const verModal = (component) => {
     return (
-      <Modal componente={component} open={open}>
+      <Modal cerrarModal={actionModal} componente={component} open={open}>
         <Button callback={() => setOpen(!open)} type='secondary-button'> Cerrar </Button>
       </Modal>
     );

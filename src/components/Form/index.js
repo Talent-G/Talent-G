@@ -6,7 +6,7 @@ import changeProfileInfo from '../../redux/actions/changeProfileInfo';
 import Button from '../Button';
 import avatar from './avatar.jpg';
 
-function Form({ firstName, lastName, summary, changeProfileInfo }) {
+function Form({ firstName, lastName, summary, changeProfileInfo, cerrarModal }) {
   const [user, setUser] = useState({
     firstName,
     lastName,
@@ -15,8 +15,8 @@ function Form({ firstName, lastName, summary, changeProfileInfo }) {
 
   const enviar = (event) => {
     event.preventDefault();
-    console.log(user);
     changeProfileInfo({ ...user });
+    cerrarModal();
   };
 
   const action = (event) => {
