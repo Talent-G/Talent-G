@@ -3,4 +3,5 @@
 .accordion {
   font-size: 2rem;
   color: var(--primary-color);
+  scroll-behavior: auto;
 }

@@ -16,7 +16,7 @@
 .accordion-title {
   display: flex;
 }
-.accordion-item:hover {
+.accordion-title:hover {
   cursor: pointer;
 }
 
