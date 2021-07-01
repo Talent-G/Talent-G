@@ -2,7 +2,7 @@ import ReactDom from 'react-dom';
 import React from 'react';
 import './styles.css';
 import Form from '../Form';
-import ListStudents from '../ListStudents';
+//import Accordion from '../Accordion';
 
 export default function Modal({ componente, children, open }) {
   //const [abierto, setAbierto] = useState(true);
@@ -22,10 +22,10 @@ export default function Modal({ componente, children, open }) {
             Agenda
             {children}
           </p>
-        ) : componente === 'List_Students' ? (
+        ) : componente === 'Feedback_Accordeon' ? (
           <div>
             {' '}
-            <ListStudents />
+            Aqui va el accorden
             {children}
           </div>
         ) :

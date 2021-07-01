@@ -4,11 +4,12 @@
   /* width: 439px;
   height: 672px; 612 */
   width: 375px;
-  height: 672px;
+  height: 500px;
   padding-left: 42px;
   padding-right: 42px;
   padding-bottom: 0px;
   position: absolute;
+  overflow-y: scroll;
   margin: 0 ;
   background-color: white ;
   font-size: var(--text-font-size);

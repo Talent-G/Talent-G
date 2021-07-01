@@ -41,7 +41,7 @@ function Dashboard() {
           <section className='dashboard__buttons wrapper'>
             <AsideButton lbl='Editar Perfil' action={() => actionModal('Formulario')} />
             <AsideButton lbl='Ver Agenda' action={() => actionModal('--')} />
-            <AsideButton lbl='Ver Feedback' action={() => actionModal('List_Students')} />
+            <AsideButton lbl='Ver Feedback' action={() => actionModal('Feedback_Accordeon')} />
           </section>
           <section className='dashboard__feedback'>
             <Feedback />
