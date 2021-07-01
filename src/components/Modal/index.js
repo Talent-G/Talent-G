@@ -9,32 +9,34 @@ export default function Modal({ componente, children, open }) {
 
   if (!open) return null;
   return ReactDom.createPortal(
-    <div className='perfil_modal'>
-      {componente === 'Formulario' ? (
-        <div>
-          <Form />
-          {children}
-        </div>
-      ) : componente === 'agenda' ? (
-        <p>
-          {' '}
-          Agenda
-          {children}
-        </p>
-      ) : componente === 'List_Students' ? (
-        <div>
-          {' '}
-          <ListStudents />
-          {children}
-        </div>
-      ) :
-        (
+    <div className='Padre-modal'>
+      <div className='perfil_modal'>
+        {componente === 'Formulario' ? (
+          <div>
+            <Form />
+            {children}
+          </div>
+        ) : componente === 'agenda' ? (
           <p>
             {' '}
-            No le llego ningun componente al modal
+            Agenda
             {children}
           </p>
-        )}
+        ) : componente === 'List_Students' ? (
+          <div>
+            {' '}
+            <ListStudents />
+            {children}
+          </div>
+        ) :
+          (
+            <p>
+              {' '}
+              No le llego ningun componente al modal
+              {children}
+            </p>
+          )}
+      </div>
     </div>,
     document.getElementById('portal'),
   );
