@@ -14,10 +14,9 @@ function Form({ firstName, lastName, summary, changeProfileInfo, cerrarModal }) 
   });
 
   const enviar = (event) => {
-    cerrarModal();
     event.preventDefault();
-    console.log(user);
     changeProfileInfo({ ...user });
+    cerrarModal();
   };
 
   const action = (event) => {

@@ -17,7 +17,6 @@ function Dashboard() {
   const actionModal = (componentName) => {
     setComponent(componentName);
     setOpen(!open);
-    console.log('hola');
   };
   const verModal = (component) => {
     return (

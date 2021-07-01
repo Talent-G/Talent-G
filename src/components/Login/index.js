@@ -31,7 +31,6 @@ function Login({ auth }) {
   };
 
   const onSubmit = (data) => {
-    console.log(data);
     dispatch(loginRequest(data.username, 'student'));
   };
 
