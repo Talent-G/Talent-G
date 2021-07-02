@@ -2,6 +2,7 @@ import ReactDom from 'react-dom';
 import React from 'react';
 import Form from '../Form';
 import Accordion from '../Accordion';
+import Agenda from '../Agenda';
 import './styles.css';
 
 export default function Modal({ componente, children, open, cerrarModal }) {
@@ -29,7 +30,7 @@ export default function Modal({ componente, children, open, cerrarModal }) {
         ) : componente === 'Agenda' ? (
           <div>
             {' '}
-            Aqui iria una componente Agenda si estuviera
+            <Agenda />
             {children}
           </div>
         ) :
