@@ -18,6 +18,7 @@ const initialState = {
     },
   },
   status: '',
+  type: 'student',
 };
 
 export default function reducer(state = initialState, { type, payload }) {
@@ -44,6 +45,11 @@ export default function reducer(state = initialState, { type, payload }) {
         loading: false,
         auth: true,
         content: payload,
+      };
+    case 'USER_TYPE':
+      return {
+        ...state,
+        type: payload,
       };
     case 'FETCH_USER_FAILURE':
       return {

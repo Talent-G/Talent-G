@@ -77,7 +77,7 @@ Agenda.defaultProps = {
 
 const mapStateToProps = (state) => {
   return {
-    type: state?.students?.content?.type,
+    type: state?.students?.type,
   };
 };
 

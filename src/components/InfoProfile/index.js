@@ -40,10 +40,10 @@ InfoProfile.defaultProps = {
 
 const mapStateToProps = (state) => {
   return {
-    location: state?.students?.content?.user?.location,
-    trainingName: state?.students?.content?.user?.training?.trainingName,
+    location: state?.students?.content?.location,
+    trainingName: state?.students?.content?.training?.trainingName,
     loading: state?.students?.loading,
-    image: state?.students?.content?.user?.urlImage,
+    image: state?.students?.content?.urlImage,
   };
 };
 
