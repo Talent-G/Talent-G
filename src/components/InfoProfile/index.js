@@ -16,7 +16,7 @@ function InfoProfile({ rol, trainingName, location, image, loading }) {
       <div className='profile__image'>
         <img alt='profile' src={image} />
       </div>
-      <ProfileData rol={rol} />
+      <ProfileData />
       <div className='profile__info'>
         <div className='info__container sidebar'>
           <h2>Bootcamp</h2>
@@ -42,7 +42,8 @@ const mapStateToProps = (state) => {
   return {
     location: state?.students?.content?.location,
     trainingName: state?.students?.content?.training?.trainingName,
-    loading: state.students.loading,
+    loading: state?.students?.loading,
+    image: state?.students?.content?.urlImage,
   };
 };
 

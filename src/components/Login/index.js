@@ -19,6 +19,7 @@ function Login({ auth }) {
     defaultValues: {
       username: '',
       password: '',
+      rol: 'student',
     },
   });
   const [passwordInput, setInput] = useState(false);
@@ -31,7 +32,7 @@ function Login({ auth }) {
   };
 
   const onSubmit = (data) => {
-    dispatch(loginRequest(data.username, 'student'));
+    dispatch(loginRequest(data.username, data.rol));
   };
 
   const togglePasswordVisiblity = () => {
@@ -62,6 +63,10 @@ function Login({ auth }) {
                   {...register('username', { required: 'This is required.' })}
                   type='text'
                 />
+                <select className='select' {...register('rol')}>
+                  <option value='student'>Estudiante</option>
+                  <option value='trainer'>Trainer</option>
+                </select>
                 <div className='form__button'>
                   <Button
                     type='primary-button'

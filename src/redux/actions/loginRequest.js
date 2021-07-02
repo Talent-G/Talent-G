@@ -15,6 +15,13 @@ const fetchUserSuccess = (payload) => {
   };
 };
 
+const fetchTypeUser = (payload) => {
+  return {
+    type: 'USER_TYPE',
+    payload,
+  };
+};
+
 const fetchUserFailure = (payload) => {
   return {
     type: 'FETCH_USER_FAILURE',
@@ -37,6 +44,7 @@ const loginRequest = (email, type) => {
       .then((response) => {
         const user = response.data.content;
         dispatch(fetchUserSuccess(user));
+        dispatch(fetchTypeUser(type));
       })
       .catch((error) => {
         const errMsg = error.message;

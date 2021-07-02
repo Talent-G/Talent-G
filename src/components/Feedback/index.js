@@ -1,23 +1,24 @@
 
 import React from 'react';
+import { connect } from 'react-redux';
 import BottomCard from '../BottomCard';
 import './styles.css';
 
-const Feedback = ({ title, asignments }) => {
+const Feedback = ({ title, homework }) => {
   return (
     <>
       <BottomCard>
         <div className='feedback-container'>
           <span className='feedback-title'>{title}</span>
           <ul className='feedback-items'>
-            {asignments.map((asignment) => (
+            {homework.map((asignment) => (
               <li className='feedback-item' key={asignment.id}>
                 <a href='/'>
-                  {asignment.type}
+                  {asignment.homeworkName}
                   {' '}
                   -
                   {' '}
-                  {asignment.description}
+                  {asignment.homeworkDetails}
                 </a>
               </li>
             ))}
@@ -32,23 +33,29 @@ const Feedback = ({ title, asignments }) => {
 Feedback.defaultProps = {
   title: 'Feedback',
   asignments: [{ id: 1,
-    type: 'Tarea',
-    description: 'Magazine Layout',
+    homeworkName: 'Tarea',
+    homeworkDetails: 'Magazine Layout',
     status: true,
   },
   {
     id: 2,
-    type: 'Tarea',
-    description: 'Codewars Katas',
+    homeworkName: 'Tarea',
+    homeworkDetails: 'Codewars Katas',
     status: true,
   },
   {
     id: 3,
-    type: 'Tarea',
-    description: 'Puzzle JS',
+    homeworkName: 'Tarea',
+    homeworkDetails: 'Puzzle JS',
     status: true,
   },
   ],
 };
 
-export default Feedback;
+const mapStateToProps = (state) => {
+  return {
+    homework: state?.schedule?.content?.homeworkRDTOList,
+  };
+};
+
+export default connect(mapStateToProps, null)(Feedback);

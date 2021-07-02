@@ -4,9 +4,8 @@ import { connect } from 'react-redux';
 import './styles.css';
 import changeProfileInfo from '../../redux/actions/changeProfileInfo';
 import Button from '../Button';
-import avatar from './avatar.jpg';
 
-function Form({ firstName, lastName, summary, changeProfileInfo, cerrarModal }) {
+function Form({ firstName, lastName, summary, changeProfileInfo, cerrarModal, image }) {
   const [user, setUser] = useState({
     firstName,
     lastName,
@@ -36,7 +35,7 @@ function Form({ firstName, lastName, summary, changeProfileInfo, cerrarModal }) 
               Perfil
             </h1>
             <div className=''>
-              <img className='foto_avatar' src={avatar} alt='logo' />
+              <img className='foto_avatar' src={image} alt='logo' />
             </div>
           </div>
           <div className='text_contet'>
@@ -66,7 +65,7 @@ function Form({ firstName, lastName, summary, changeProfileInfo, cerrarModal }) 
             <label htmlFor='summary' className='label'> Summary </label>
             <br />
             <textarea
-              className='label text_area'
+              className='text_area'
               id='summary'
               onChange={action}
               value={user.summary}
@@ -89,6 +88,7 @@ const mapStateToProps = (state) => {
     firstName: state?.students?.content?.firstName,
     lastName: state?.students?.content?.lastName,
     summary: state?.students?.content?.summary,
+    image: state?.students?.content?.urlImage,
   };
 };
 

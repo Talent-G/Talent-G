@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-function ProfileData({ firstName, lastName, rol }) {
+function ProfileData({ firstName, lastName, type }) {
 
   return (
     <div className='profile__data'>
       <h1>
         {`${firstName} ${lastName}`}
       </h1>
-      <span>{rol}</span>
+      <span>{type}</span>
     </div>
   );
 }
@@ -16,13 +16,14 @@ function ProfileData({ firstName, lastName, rol }) {
 ProfileData.defaultProps = {
   firstName: '',
   lastName: '',
-  rol: '',
+  type: '',
 };
 
 const mapStateToProps = (state) => {
   return {
     firstName: state?.students?.content?.firstName,
     lastName: state?.students?.content?.lastName,
+    type: state?.students?.type,
   };
 };
 

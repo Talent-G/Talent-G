@@ -11,8 +11,8 @@ const AccordionItem = ({ title, content }) => {
   const [isActive, setIsActive] = useState(false);
   return (
     <>
-      <div className='accordion'>
-        <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
+      <div className='accordion-item'>
+        <div className="accordion-subtitle" onClick={() => setIsActive(!isActive)}>
           <img className='toggle' src={Chevron} aria-expanded={isActive} alt='Toggle Accordion' />
           <span>{title}</span>
         </div>
