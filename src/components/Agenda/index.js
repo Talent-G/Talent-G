@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Icon from '../../statics/icon.png';
+
 import './styles.css';
 
-function Agenda({ tipo, contenido }) {
-  const action = () => {
-    console.log('Se dio clic');
-  };
+function Agenda({ tipo, contenido, cerrarModal, verModal }) {
+  const [abierto, SetAbierto] = useState(false);
+
   const listAgendaStudent = contenido.map((dia) => (
     <li key={dia}>
       {dia}
@@ -14,9 +14,13 @@ function Agenda({ tipo, contenido }) {
     </li>
   ));
   const listAgendaTrainer = contenido.map((dia) => (
-    <li key={dia}>
-      {dia}
-      <img className='Agenda__icon' onClick={action} src={Icon} alt='Icon' />
+    <li key={dia} className='Agenda'>
+      <span>
+        {' '}
+        *
+        {dia}
+      </span>
+      <img className='Agenda__icon' onClick={() => (SetAbierto(!abierto))} src={Icon} alt='Icon' />
       <hr />
       {' '}
     </li>
@@ -36,6 +40,17 @@ function Agenda({ tipo, contenido }) {
           <h2>Agenda</h2>
           <ul>
             {listAgendaTrainer}
+            {
+              abierto === true ? (
+                <div>
+                  {verModal('Agenda_Edit')}
+                </div>
+              ) : (
+                <div>
+                  {console.log('nada')}
+                </div>
+              )
+            }
           </ul>
         </div>
       );

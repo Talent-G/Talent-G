@@ -1,6 +1,7 @@
 @import "../../globals.css";
 
 .form_body{
+  
 margin-bottom: 10px;
 }
 
@@ -45,4 +46,6 @@ margin-bottom: 10px;
   width: 357px;
   height: 116px;
   resize: none;
+  display: inline;
+  margin: 10px;
 }

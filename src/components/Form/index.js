@@ -66,7 +66,7 @@ function Form({ firstName, lastName, summary, changeProfileInfo, cerrarModal }) 
             <label htmlFor='summary' className='label'> Summary </label>
             <br />
             <textarea
-              className='label text_area'
+              className='text_area'
               id='summary'
               onChange={action}
               value={user.summary}

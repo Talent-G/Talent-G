@@ -2,11 +2,13 @@ import ReactDom from 'react-dom';
 import React from 'react';
 import Form from '../Form';
 import Accordion from '../Accordion';
+import SecondForm from '../SecondForm';
+// eslint-disable-next-line import/no-cycle
 import Agenda from '../Agenda';
 import './styles.css';
 
-export default function Modal({ componente, children, open, cerrarModal }) {
-  if (!open) return null;
+export default function Modal({ componente, children, open, cerrarModal, verModal }) {
+  if (open === false) return null;
   return ReactDom.createPortal(
     <div className='Padre-modal'>
       <div className='perfil_modal'>
@@ -15,12 +17,6 @@ export default function Modal({ componente, children, open, cerrarModal }) {
             <Form cerrarModal={cerrarModal} />
             {children}
           </div>
-        ) : componente === 'agenda' ? (
-          <p>
-            {' '}
-            Agenda
-            {children}
-          </p>
         ) : componente === 'Feedback_Accordeon' ? (
           <div>
             {' '}
@@ -30,7 +26,13 @@ export default function Modal({ componente, children, open, cerrarModal }) {
         ) : componente === 'Agenda' ? (
           <div>
             {' '}
-            <Agenda />
+            <Agenda verModal={verModal} cerrarModal={cerrarModal} />
+            {children}
+          </div>
+        ) : componente === 'Agenda_Edit' ? (
+          <div>
+            {' '}
+            <SecondForm cerrarModal={cerrarModal} />
             {children}
           </div>
         ) :
@@ -50,5 +52,5 @@ export default function Modal({ componente, children, open, cerrarModal }) {
 Modal.defaultProps = {
   css: 'perfil_modal',
   componente: '-',
-
+  open: true,
 };
