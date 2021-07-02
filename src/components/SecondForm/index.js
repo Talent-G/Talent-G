@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 import Button from '../Button';
 import './styles.css';
 
-export default function SecondForm({ title, dayNumber, classTheme }) {
+export default function SecondForm({ title, dayNumber, classTheme, cerrarModal }) {
 
   const [description, setDescription] = useState('');
 
   const enviar = (event) => {
     event.preventDefault();
-
+    cerrarModal();
   };
 
   const action = (event) => {
@@ -50,16 +50,15 @@ export default function SecondForm({ title, dayNumber, classTheme }) {
             name='summary'
           />
 
-          <select>
+          <select className='Form__Select'>
             <option value='trainer'>Trainer..</option>
             <option value='Miguel Romero'>Miguel Romero</option>
             <option value='Ruben Pantoja'>Rúben Pantoja</option>
             <option value='Ad Quintero'>Ad Quintero</option>
           </select>
-
+          <Button callback={enviar} type='primary-button'> Guardar</Button>
         </div>
 
-        <Button callback={enviar} type='primary-button'> Guardar</Button>
       </form>
     </div>
   );
