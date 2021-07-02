@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import fetchSchedule from '../../redux/actions/fetchSchedule';
+import fetchHomework from '../../redux/actions/fetchHomework';
 import './styles.css';
 
 function MainInfo({ summary, day, topic, resourceDTOList, firstName, lastName }) {
@@ -19,6 +20,7 @@ function MainInfo({ summary, day, topic, resourceDTOList, firstName, lastName })
 
   useEffect(() => {
     dispatch(fetchSchedule(scheduleDay));
+    dispatch(fetchHomework(scheduleDay));
   }, [scheduleDay]);
 
   return (
