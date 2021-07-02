@@ -18,7 +18,7 @@ function InfoProfile({ rol, trainingName, location, image, loading }) {
       </div>
       <ProfileData />
       <div className='profile__info'>
-        <div className='info__container'>
+        <div className='info__container sidebar'>
           <h2>Bootcamp</h2>
           <span>{trainingName}</span>
         </div>

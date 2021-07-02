@@ -6,6 +6,7 @@
   padding: 2rem;
   box-shadow: var(--box-shadow);
   scroll-behavior: auto;
+  
 }
 
 @media (max-width: 768px) {
