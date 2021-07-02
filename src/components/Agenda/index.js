@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import Icon from '../../statics/icon.png';
 
 import './styles.css';
 
-function Agenda({ tipo, contenido, cerrarModal, verModal }) {
+function Agenda({ type, contenido, cerrarModal, verModal }) {
   const [abierto, SetAbierto] = useState(false);
 
   const listAgendaStudent = contenido.map((dia) => (
@@ -26,7 +27,7 @@ function Agenda({ tipo, contenido, cerrarModal, verModal }) {
     </li>
   ));
   function SwitchAgenda() {
-    switch (tipo) {
+    switch (type) {
       case 'student': return (
         <div>
           <h2>agenda</h2>
@@ -74,4 +75,10 @@ Agenda.defaultProps = {
 
 };
 
-export default Agenda;
+const mapStateToProps = (state) => {
+  return {
+    type: state?.students?.content?.type,
+  };
+};
+
+export default connect(mapStateToProps, null)(Agenda);
