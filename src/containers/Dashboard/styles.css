@@ -1,7 +1,6 @@
 @import url("../../globals.css");
 
 .dashboard {
-  
   min-height: 100vh;
   display: flex;
   flex-direction: column;

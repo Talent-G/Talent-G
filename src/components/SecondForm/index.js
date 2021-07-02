@@ -17,8 +17,6 @@ export default function SecondForm({ title, dayNumber, classTheme }) {
     setDescription(event.target.value);
   };
 
-  console.log(description);
-
   return (
     <div>
       <form className='form_body' onSubmit={enviar}>
