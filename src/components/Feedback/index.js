@@ -18,7 +18,7 @@ const Feedback = ({ title, homework }) => {
                   {' '}
                   -
                   {' '}
-                  {asignment.feedback}
+                  {asignment.homeworkDetails}
                 </a>
               </li>
             ))}
@@ -34,19 +34,19 @@ Feedback.defaultProps = {
   title: 'Feedback',
   asignments: [{ id: 1,
     homeworkName: 'Tarea',
-    feedback: 'Magazine Layout',
+    homeworkDetails: 'Magazine Layout',
     status: true,
   },
   {
     id: 2,
     homeworkName: 'Tarea',
-    feedback: 'Codewars Katas',
+    homeworkDetails: 'Codewars Katas',
     status: true,
   },
   {
     id: 3,
     homeworkName: 'Tarea',
-    feedback: 'Puzzle JS',
+    homeworkDetails: 'Puzzle JS',
     status: true,
   },
   ],
@@ -54,7 +54,7 @@ Feedback.defaultProps = {
 
 const mapStateToProps = (state) => {
   return {
-    homework: state?.homework?.content,
+    homework: state?.schedule?.content?.homeworkRDTOList,
   };
 };
 

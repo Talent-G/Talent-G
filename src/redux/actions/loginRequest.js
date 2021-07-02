@@ -36,7 +36,7 @@ const loginRequest = (email, type) => {
     })
       .then((response) => {
         const user = response.data.content;
-        dispatch(fetchUserSuccess(user));
+        dispatch(fetchUserSuccess({ user, type }));
       })
       .catch((error) => {
         const errMsg = error.message;

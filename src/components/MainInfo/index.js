@@ -4,12 +4,12 @@ import fetchSchedule from '../../redux/actions/fetchSchedule';
 import fetchHomework from '../../redux/actions/fetchHomework';
 import './styles.css';
 
-function MainInfo({ summary, day, topic, resourceDTOList, firstName, lastName }) {
+function MainInfo({ summary, day, topic, resourceDTOList, firstName, lastName, type }) {
   const [scheduleDay, setScheduleDay] = useState(1);
   const dispatch = useDispatch();
 
   const listResources = resourceDTOList?.map((recurso) => (
-    <li>
+    <li key={recurso.id}>
       <a href='todo:replaceRoute'>
         {' '}
         {recurso.summary}
@@ -25,7 +25,6 @@ function MainInfo({ summary, day, topic, resourceDTOList, firstName, lastName })
 
   return (
     <div className='main__info '>
-      <button type='button' onClick={() => setScheduleDay(scheduleDay + 1)}>Next</button>
       <div className='main__card wrapper'>
         <div className='main__left'>
           <div className='text__container'>
@@ -51,6 +50,22 @@ function MainInfo({ summary, day, topic, resourceDTOList, firstName, lastName })
             </figcaption>
           </div>
         </div>
+        <button
+          className='button__arrow'
+          type='button'
+          onClick={() => setScheduleDay(scheduleDay + 1)}
+        >
+          <svg
+            width='36'
+            height='36'
+            viewBox='0 0 36 36'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+            className='aside-button__arrow'
+          >
+            <path d='M15 9L12.885 11.115L19.755 18L12.885 24.885L15 27L24 18L15 9Z' />
+          </svg>
+        </button>
       </div>
     </div>
   );
