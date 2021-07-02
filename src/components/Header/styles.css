@@ -31,3 +31,8 @@ nav.header-nav a {
 nav.header-nav img {
   width: 1rem;
 }
+
+.header__buton{
+  cursor: pointer;
+  transition: all ease 150ms;
+}

@@ -1,9 +1,9 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
-import './styles.css';
 import Button from '../Button';
+import './styles.css';
 
 export default function SecondForm({ title, dayNumber, classTheme }) {
-  const primario = 'primary-button';
 
   const [description, setDescription] = useState('');
 
@@ -16,8 +16,6 @@ export default function SecondForm({ title, dayNumber, classTheme }) {
     event.preventDefault();
     setDescription(event.target.value);
   };
-
-  console.log(description);
 
   return (
     <div>
@@ -44,6 +42,7 @@ export default function SecondForm({ title, dayNumber, classTheme }) {
           <label htmlFor='summary' className='label_summary' />
           <br />
           <textarea
+            id='summary'
             className='label text_area'
             placeholder='Summary...'
             onChange={action}
@@ -60,7 +59,7 @@ export default function SecondForm({ title, dayNumber, classTheme }) {
 
         </div>
 
-        <Button children='Guardar' tipo={primario} type='submit' />
+        <Button callback={enviar} type='primary-button'> Guardar</Button>
       </form>
     </div>
   );
