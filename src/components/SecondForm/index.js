@@ -9,11 +9,10 @@ export default function SecondForm({ title, dayNumber, classTheme, cerrarModal }
 
   const enviar = (event) => {
     event.preventDefault();
-
+    cerrarModal();
   };
 
   const action = (event) => {
-    cerrarModal();
     event.preventDefault();
     setDescription(event.target.value);
   };
