@@ -1,8 +1,8 @@
 import React from 'react';
 import './styles.css';
 
-export default function ListStudents({ titulo, list_name }) {
-  const listNameStudets = list_name.map((name) => <li><a href='#'>{name}</a></li>);
+export default function ListStudents({ titulo, listName }) {
+  const listNameStudets = listName.map((name) => <li><a href='/'>{name}</a></li>);
   return (
     <div className='ListStudents'>
       <h2>
